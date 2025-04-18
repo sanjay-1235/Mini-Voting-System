@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Voting System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Mini Voting System</h1>
+    <div class="candidates">
+      <div class="candidate">
+        <h2>Candidate A</h2>
+        <button onclick="vote('a')">Vote</button>
+        <p id="votes-a">Votes: 0</p>
+      </div>
+      <div class="candidate">
+        <h2>Candidate B</h2>
+        <button onclick="vote('b')">Vote</button>
+        <p id="votes-b">Votes: 0</p>
+      </div>
+      <div class="candidate">
+        <h2>Candidate C</h2>
+        <button onclick="vote('c')">Vote</button>
+        <p id="votes-c">Votes: 0</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let votes = { a: 0, b: 0, c: 0 };
+
+    function vote(candidate) {
+      votes[candidate]++;
+      document.getElementById(`votes-${candidate}`).innerText = `Votes: ${votes[candidate]}`;
+    }
+  </script>
+</body>
+</html>
